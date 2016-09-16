@@ -12,7 +12,6 @@
 
     // Функция, вызываемая при подключении нового пользователя
     chat.client.onConnected = function (id, userName, allUsers) {
-        alert("111");
         $('#loginBlock').hide();
         $('#chatBody').show();
         // установка в скрытых полях имени и id текущего пользователя
@@ -29,7 +28,6 @@
 
     // Добавляем нового пользователя
     chat.client.onNewUserConnected = function (id, name) {
-        alert("222");
 
         AddUser(id, name);
     }
@@ -42,7 +40,6 @@
 
     // Открываем соединение
     $.connection.hub.start().done(function () {
-        alert("333");
 
         $('#sendmessage').click(function () {
             // Вызываем у хаба метод Send
@@ -52,7 +49,6 @@
 
         // обработка логина
         $("#btnLogin").click(function () {
-            alert("444");
             var name = $("#txtUserName").val();
             if (name.length > 0) {
                 chat.server.connect(name);
